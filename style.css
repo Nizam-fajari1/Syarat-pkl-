@@ -1,7 +1,3 @@
-/* ============================================
-   HYPER MODERN – ULTRA CLEAN PREMIUM STYLE
-   by ChatGPT for Bang Nizam 🔥
-============================================ */
 
 * {
   margin: 0;
@@ -292,4 +288,24 @@ footer {
   color: #7b8a96;
   margin-top: 80px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* ==========================
+   FOTO PROFIL
+========================== */
+
+.profile-photo{
+    width: 250px;          /* Ukuran foto */
+    height: 250px;         /* Harus sama dengan width */
+    object-fit: cover;     /* Agar foto tidak gepeng */
+    border-radius: 50%;    /* Membuat foto bulat */
+    border: 5px solid #00eaff;
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.5);
+    display: block;
+    margin: 20px auto;
+    transition: 0.4s ease;
+}
+
+.profile-photo:hover{
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(0, 234, 255, 0.8);
 }
