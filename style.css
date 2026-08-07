@@ -12,8 +12,6 @@ body {
   overflow-x: hidden;
   line-height: 1.7;
 }
-
-/* Subtle animated fog */
 body::before {
   content: "";
   position: fixed;
@@ -31,10 +29,6 @@ body::before {
   0% { transform: translate(0, 0); }
   100% { transform: translate(-120px, 80px); }
 }
-
-/* ============================================
-   NAVBAR – MINIMAL ELEGANT + SHADOW LAYER
-============================================ */
 header {
   position: fixed;
   width: 100%;
@@ -355,14 +349,34 @@ footer {
     color:#fff;
 }
 @media (max-width: 768px) {
+    header {
+        position: relative; /* Agar header tidak melayang dan menutupi konten saat vertikal */
+        padding: 15px 0;
+    }
+
     nav {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 18px; /* Mengecilkan logo agar tidak terpotong */
     }
 
     nav ul {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Tetap horizontal agar hemat ruang vertikal */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    main {
+        padding-top: 30px; /* Kurangi padding atas karena header tidak lagi fixed di mobile */
     }
 
     .about-me {
@@ -376,8 +390,8 @@ footer {
     }
 
     .profile-photo {
-        width: 220px;
-        height: 220px;
+        width: 180px;
+        height: 180px;
     }
 }
 /* ==========================
@@ -410,4 +424,7 @@ footer {
     color:#00eaff;
     box-shadow:0 0 25px rgba(0,234,255,.6);
     border-color:#00eaff;
+}
+section, #skills, #projects, #contact, #certificates {
+    scroll-margin-top: 100px;
 }
