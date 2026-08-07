@@ -354,3 +354,60 @@ footer {
     padding:15px;
     color:#fff;
 }
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .projects-list,
+    .certificate-list {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+}
+/* ==========================
+   SOCIAL ICONS
+========================== */
+
+.social-icons{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+}
+
+.social-icons a{
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#fff;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50%;
+    font-size:24px;
+    transition:.4s;
+}
+
+.social-icons a:hover{
+    transform:translateY(-8px) scale(1.1);
+    color:#00eaff;
+    box-shadow:0 0 25px rgba(0,234,255,.6);
+    border-color:#00eaff;
+}
