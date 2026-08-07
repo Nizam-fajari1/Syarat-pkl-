@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        const nomorWA="6285998028558";
+        const nomorWA="085998028558";
 
         const isiPesan=`
 
