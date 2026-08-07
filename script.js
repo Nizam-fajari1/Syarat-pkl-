@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        const nomorWA="085998028558";
+        const nomorWA="6285998028558";
 
         const isiPesan=`
 
@@ -44,7 +44,7 @@ Terima kasih.
 
 `;
 
-        const link="https://wa.me/"+085998028558+
+        const link="https://wa.me/"+6285998028558+
         "?text="+encodeURIComponent(isiPesan);
 
         window.open(link,"_blank");
