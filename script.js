@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        const nomorWA="6285998028558";
-
+        const nomorWA="6287816109438";
         const isiPesan=`
 
 Halo Muhammad Nizam Fajari 👋
@@ -44,7 +43,7 @@ Terima kasih.
 
 `;
 
-        const link="https://wa.me/"+6285998028558+
+        const link="https://wa.me/"+6287816109438+
         "?text="+encodeURIComponent(isiPesan);
 
         window.open(link,"_blank");
