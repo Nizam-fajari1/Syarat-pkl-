@@ -1,55 +1,171 @@
-document.addEventListener("DOMContentLoaded", () => {
+```text
+// ===============================
+// SMOOTH SCROLL
+// ===============================
 
-    const form = document.getElementById("contact-form");
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
-    form.addEventListener("submit", function(e){
+  link.addEventListener("click", function (e) {
 
-        e.preventDefault();
+    const targetId = this.getAttribute("href");
 
-        const nama =
-        document.getElementById("name").value.trim();
+    if (targetId === "#") {
+      e.preventDefault();
+      return;
+    }
 
-        const email =
-        document.getElementById("email").value.trim();
+    const target = document.querySelector(targetId);
 
-        const pesan =
-        document.getElementById("message").value.trim();
+    if (target) {
+      e.preventDefault();
 
-        if(nama==="" || email==="" || pesan===""){
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
 
-            alert("Semua data wajib diisi!");
+  });
 
-            return;
+});
 
-        }
 
-        const nomorWA="6287816109438";
-        const isiPesan=`
+// ===============================
+// CONTACT FORM → WHATSAPP
+// ===============================
 
-Halo Muhammad Nizam Fajari 👋
+const contactForm = document.getElementById("contact-form");
 
-Saya melihat portfolio Anda.
+if (contactForm) {
 
-Nama :
-${nama}
+  contactForm.addEventListener("submit", function (e) {
 
-Email :
-${email}
+    e.preventDefault();
 
-Pesan :
-${pesan}
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-Terima kasih.
+    if (!name || !email || !message) {
+      alert("Tolong isi semua bagian terlebih dahulu.");
+      return;
+    }
 
-`;
+    // GANTI DENGAN NOMOR WHATSAPP KAMU
+    const whatsappNumber = "628XXXXXXXXXX";
 
-        const link="https://wa.me/"+6287816109438+
-        "?text="+encodeURIComponent(isiPesan);
+    const whatsappMessage =
+      "Halo Muhammad Nizam Fajari 👋\n\n" +
+      "Nama: " + name + "\n" +
+      "Email: " + email + "\n\n" +
+      "Pesan:\n" +
+      message;
 
-        window.open(link,"_blank");
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(whatsappMessage);
 
-        form.reset();
+    window.open(whatsappURL, "_blank");
+
+  });
+
+}
+
+
+// ===============================
+// REVEAL ANIMATION
+// ===============================
+
+const revealElements = document.querySelectorAll(
+  "section, .project-card, .certificate-card, .skill-card"
+);
+
+const revealObserver = new IntersectionObserver(
+  function (entries, observer) {
+
+    entries.forEach(function (entry) {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("show");
+
+        observer.unobserve(entry.target);
+
+      }
 
     });
 
+  },
+  {
+    threshold: 0.12
+  }
+);
+
+
+revealElements.forEach(function (element) {
+
+  element.classList.add("reveal");
+
+  revealObserver.observe(element);
+
 });
+
+
+// ===============================
+// ACTIVE NAVIGATION
+// ===============================
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", function () {
+
+  let currentSection = "";
+
+  sections.forEach(function (section) {
+
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      currentSection = section.getAttribute("id");
+    }
+
+  });
+
+
+  navLinks.forEach(function (link) {
+
+    link.classList.remove("active");
+
+    if (
+      link.getAttribute("href") === "#" + currentSection
+    ) {
+      link.classList.add("active");
+    }
+
+  });
+
+});
+
+
+// ===============================
+// CURRENT YEAR
+// ===============================
+
+const footer = document.querySelector("footer");
+
+if (footer) {
+
+  footer.innerHTML = footer.innerHTML.replace(
+    "2026",
+    new Date().getFullYear()
+  );
+
+}
+```
