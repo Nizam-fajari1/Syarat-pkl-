@@ -1,4 +1,3 @@
-
 // ===============================
 // SMOOTH SCROLL
 // ===============================
@@ -57,8 +56,8 @@ if (contactForm) {
       message;
 
     const whatsappURL =
-      "https://wa.me//6287816109438" +
-      whatsappNumber +6287816109438
+      "https://wa.me/" +
+      whatsappNumber +
       "?text=" +
       encodeURIComponent(whatsappMessage);
 
