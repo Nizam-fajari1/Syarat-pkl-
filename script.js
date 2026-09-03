@@ -1,4 +1,4 @@
-```text
+
 // ===============================
 // SMOOTH SCROLL
 // ===============================
@@ -30,16 +30,11 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 });
 
 
-// ===============================
-// CONTACT FORM → WHATSAPP
-// ===============================
 
 const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
-
   contactForm.addEventListener("submit", function (e) {
-
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -51,8 +46,8 @@ if (contactForm) {
       return;
     }
 
-    // GANTI DENGAN NOMOR WHATSAPP KAMU
-    const whatsappNumber = "628XXXXXXXXXX";
+    // Nomor WhatsApp kamu
+    const whatsappNumber = "6287816109438";
 
     const whatsappMessage =
       "Halo Muhammad Nizam Fajari 👋\n\n" +
@@ -62,17 +57,14 @@ if (contactForm) {
       message;
 
     const whatsappURL =
-      "https://wa.me/" +
-      whatsappNumber +
+      "https://wa.me//6287816109438" +
+      whatsappNumber +6287816109438
       "?text=" +
       encodeURIComponent(whatsappMessage);
 
     window.open(whatsappURL, "_blank");
-
   });
-
 }
-
 
 // ===============================
 // REVEAL ANIMATION
@@ -168,4 +160,3 @@ if (footer) {
   );
 
 }
-```
