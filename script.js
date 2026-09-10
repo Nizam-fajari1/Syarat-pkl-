@@ -22,6 +22,23 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         behavior: "smooth",
         block: "start"
       });
+
+      if (targetId === "#certificates") {
+
+        const certList = document.getElementById("certificate-list");
+        const certToggleBtn = document.getElementById("toggle-certificates");
+
+        if (certList && !certList.classList.contains("open")) {
+
+          certList.classList.add("open");
+          certToggleBtn.classList.add("open");
+
+          certToggleBtn.innerHTML =
+            'Sembunyikan Sertifikat <i class="fa-solid fa-chevron-down"></i>';
+
+        }
+
+      }
     }
 
   });
@@ -64,6 +81,34 @@ if (contactForm) {
     window.open(whatsappURL, "_blank");
   });
 }
+
+// ===============================
+// TOGGLE SERTIFIKAT
+// ===============================
+
+const toggleCertificatesBtn = document.getElementById("toggle-certificates");
+const certificateList = document.getElementById("certificate-list");
+
+if (toggleCertificatesBtn && certificateList) {
+
+  toggleCertificatesBtn.addEventListener("click", function () {
+
+    const isOpen = certificateList.classList.toggle("open");
+
+    toggleCertificatesBtn.classList.toggle("open", isOpen);
+
+    toggleCertificatesBtn.innerHTML = isOpen
+      ? 'Sembunyikan Sertifikat <i class="fa-solid fa-chevron-down"></i>'
+      : 'Lihat Sertifikat <i class="fa-solid fa-chevron-down"></i>';
+
+    if (isOpen) {
+      certificateList.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+  });
+
+}
+
 
 // ===============================
 // REVEAL ANIMATION
